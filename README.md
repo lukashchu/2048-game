@@ -1,27 +1,65 @@
-## Project: 2048
+# 2048 Game (Java Implementation)  
+**Author**: Andrew Lukashchuk  
 
-by Andrew Lukashchuk
+## 📋 Overview  
+This is a custom implementation of the classic **2048** game written in Java using the `PennDraw` library for graphics. The game supports multiple modes, including:  
+- **Standard play**  
+- **Hint mode**, which shows the best move  
+- **AI mode**, where the computer plays for you  
 
-### How to run
+The game features color-coded tiles, accurate animations, and a user-friendly interface. After a game ends, users can press the spacebar to restart.
 
-Game.java is the file that should be run via "java Game <mode>" where mode can be blank to just play the game regularly, or mode can be "hint" to play with a hint button in the middle, or mode can be "ai" to have the ai play the game for you.
+---
 
-### Additional features
+## 🚀 How to Run  
+1. Compile the code:  
+   `javac *.java`  
 
-The colors are color coded to be different for each number and I used colors almost the same as those in actual 2048 by using the rgb color picker.
+2. Run the game in your desired mode:  
+   - Regular game mode:  
+     `java Game`  
+   - AI plays the game:  
+     `java Game ai`  
+   - Hint button enabled:  
+     `java Game hint`  
 
-By putting in the command line argumennt "Java Game ai", the ai will play the game for you.
+> Note: Make sure `PennDraw.java` is included and compiled in the same directory if it’s not already part of the standard classpath.
 
-By putting in the command line argument "Java Game hint", there will be a hint button in the middle of the board which will give a hint of what move the player should make next.
+---
 
-After the game ends, the player can start a new one by pressing the space button instead of having to close and restard the game.
+## 🎮 Controls  
+- Use `W`, `A`, `S`, `D` keys to move the tiles up, left, down, and right.  
+- In **hint mode**, click the center button to display the AI-recommended move.  
+- After the game ends (win or loss), press the **spacebar** to start a new game instance.
 
-### Brief description of code layout
+---
 
-Game.java is the main execution that takes in the user's keyboard input and inputs it into the game. It is where the game loop that runs the game is located.
+## 🧠 Features  
+- **AI Mode**: An AI looks ahead multiple moves to decide the best strategy and plays automatically.  
+- **Hint Mode**: A button on the board shows the best move based on a depth-limited search.  
+- **Color-Coded Tiles**: Tile colors reflect standard 2048 themes using RGB values.  
+- **Responsive Game Flow**: Pressing space after a game ends instantly starts a new round.  
+- **Win/Loss Screens**: Displays a win/loss message and your total number of moves.
 
-Instance.java controls the current instance of the game that is being played. After the game is won or lost, a new instance can be started by pressing the space button.
+---
 
-Block.java contains and controls the properties for each individual tile in the 4x4 grid including the value of the tile and drawing the blocks based on their value.
+## 🧱 File Structure  
+- `Game.java`: Main driver of the program. Handles input arguments, game mode selection, and looping logic.  
+- `Instance.java`: Manages a single run of the game, including user input handling, game state, and turn tracking.  
+- `Board.java`: Core game logic for moving, merging, and scoring tiles. Also contains AI logic and rendering methods.  
+- `Block.java`: Represents individual 2048 tiles, including their appearance and behavior on the board.  
+- `PennDraw.java`: Lightweight graphics library for rendering the game.  
 
-Board.java contains the bulk of the code and has all of the methods and functions to operate how the blocks interact with each other and react the user's input whether to move everything up, down, left, or right. This file also contains the ai code.
+---
+
+## 🏁 To-Do / Ideas for Future Improvement  
+- Add undo functionality  
+- Save/load games  
+- Display current and best score  
+- Support for larger grid sizes (e.g., 5x5 or 6x6)  
+- Enhanced AI strategies (e.g., expectimax)  
+
+---
+
+## 📜 Note  
+This project is for educational purposes and is not affiliated with the official 2048 game.
